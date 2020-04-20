@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class User {
+public class CreateUserRequest {
     @NotNull(message = "First name cannot be null")
     @Size(min = 2, message = "First name must be longer than 2 characters")
     private String firstName;

@@ -1,13 +1,16 @@
 package com.ddavydov.bugtrackerusers.controller;
 
 import com.ddavydov.bugtrackerusers.dto.UserDto;
-import com.ddavydov.bugtrackerusers.model.User;
-import com.ddavydov.bugtrackerusers.model.UsersEntity;
+import com.ddavydov.bugtrackerusers.model.CreateUserRequest;
+import com.ddavydov.bugtrackerusers.model.CreateUserResponse;
 import com.ddavydov.bugtrackerusers.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,13 +32,18 @@ public class UsersController {
         return "Working on port" + env.getProperty("local.server.port");
     }
 
-    @PostMapping("/create")
-    public UserDto createUser(@RequestBody @Valid User user){
+    @PostMapping(value = "/create",
+            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public ResponseEntity<CreateUserResponse> createUser(@RequestBody @Valid CreateUserRequest createUserRequest){
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-        UserDto userDto = modelMapper.map(user, UserDto.class);
+        UserDto userDto = modelMapper.map(createUserRequest, UserDto.class);
+        UserDto createUser = usersService.createUser(userDto);
 
-        return usersService.createUser(userDto);
+        CreateUserResponse response = modelMapper.map(createUser, CreateUserResponse.class);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
