@@ -14,6 +14,11 @@ spring:
     config:
       uri: http://localhost:8012
       name: bug-tracker-config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
