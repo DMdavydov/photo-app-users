@@ -1,25 +1,17 @@
-server.port: ${PORT:0}
-spring:
-  application:
-    name: bug-tracker-users
-  devtools:
-    restart:
-      enabled: true
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
 token:
-  expiration: 864000000 #10 days
+  expiration: 864000 #10 days
   secret: hrewarhewatjawete5345jdashrak3
 
 login.url.path: "/users/login"
+
+# Disable Hystrix timeout globally (for all services)
+hystrix.command.default.execution.timeout.enabled: false
+
+#To disable timeout foror particular service,
+hystrix.command.bug-tracker-users.execution.timeout.enabled: false
+
+# Increase the Hystrix timeout to 60s (globally)
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+# Increase the Hystrix timeout to 60s (per service)
+hystrix.command.bug-tracker-users.execution.isolation.thread.timeoutInMilliseconds: 60000
