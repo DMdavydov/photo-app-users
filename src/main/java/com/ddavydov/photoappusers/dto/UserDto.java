@@ -1,4 +1,4 @@
-package com.ddavydov.bugtrackerusers.dto;
+package com.ddavydov.photoappusers.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

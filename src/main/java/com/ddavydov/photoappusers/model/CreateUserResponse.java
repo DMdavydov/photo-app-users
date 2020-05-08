@@ -1,4 +1,4 @@
-package com.ddavydov.bugtrackerusers.model;
+package com.ddavydov.photoappusers.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,9 @@ import lombok.RequiredArgsConstructor;
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class LoginRequest {
-
+public class CreateUserResponse {
+    private String firstName;
+    private String lastName;
+    private String userId;
     private String email;
-    private String password;
 }

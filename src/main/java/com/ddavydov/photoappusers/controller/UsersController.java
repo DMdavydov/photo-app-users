@@ -1,9 +1,9 @@
-package com.ddavydov.bugtrackerusers.controller;
+package com.ddavydov.photoappusers.controller;
 
-import com.ddavydov.bugtrackerusers.dto.UserDto;
-import com.ddavydov.bugtrackerusers.model.CreateUserRequest;
-import com.ddavydov.bugtrackerusers.model.CreateUserResponse;
-import com.ddavydov.bugtrackerusers.service.UsersService;
+import com.ddavydov.photoappusers.dto.UserDto;
+import com.ddavydov.photoappusers.model.CreateUserRequest;
+import com.ddavydov.photoappusers.model.CreateUserResponse;
+import com.ddavydov.photoappusers.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

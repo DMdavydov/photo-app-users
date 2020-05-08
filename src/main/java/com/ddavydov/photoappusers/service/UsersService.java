@@ -1,6 +1,6 @@
-package com.ddavydov.bugtrackerusers.service;
+package com.ddavydov.photoappusers.service;
 
-import com.ddavydov.bugtrackerusers.dto.UserDto;
+import com.ddavydov.photoappusers.dto.UserDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UsersService extends UserDetailsService {

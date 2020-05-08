@@ -1,4 +1,4 @@
-package com.ddavydov.bugtrackerusers.model;
+package com.ddavydov.photoappusers.model;
 
 import lombok.Data;
 

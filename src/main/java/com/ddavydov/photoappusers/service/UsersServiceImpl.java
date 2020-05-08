@@ -1,12 +1,11 @@
-package com.ddavydov.bugtrackerusers.service;
+package com.ddavydov.photoappusers.service;
 
-import com.ddavydov.bugtrackerusers.dto.UserDto;
-import com.ddavydov.bugtrackerusers.model.UsersEntity;
-import com.ddavydov.bugtrackerusers.repository.UsersRepository;
+import com.ddavydov.photoappusers.dto.UserDto;
+import com.ddavydov.photoappusers.model.UsersEntity;
+import com.ddavydov.photoappusers.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,7 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service

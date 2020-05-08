@@ -1,8 +1,8 @@
-package com.ddavydov.bugtrackerusers.security;
+package com.ddavydov.photoappusers.security;
 
-import com.ddavydov.bugtrackerusers.dto.UserDto;
-import com.ddavydov.bugtrackerusers.model.LoginRequest;
-import com.ddavydov.bugtrackerusers.service.UsersService;
+import com.ddavydov.photoappusers.dto.UserDto;
+import com.ddavydov.photoappusers.model.LoginRequest;
+import com.ddavydov.photoappusers.service.UsersService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

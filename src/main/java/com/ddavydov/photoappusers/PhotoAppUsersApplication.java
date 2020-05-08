@@ -1,4 +1,4 @@
-package com.ddavydov.bugtrackerusers;
+package com.ddavydov.photoappusers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class BugTrackerUsersApplication {
+public class PhotoAppUsersApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BugTrackerUsersApplication.class, args);
+        SpringApplication.run(PhotoAppUsersApplication.class, args);
     }
 
     @Bean

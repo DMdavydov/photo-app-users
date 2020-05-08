@@ -1,6 +1,6 @@
-package com.ddavydov.bugtrackerusers.security;
+package com.ddavydov.photoappusers.security;
 
-import com.ddavydov.bugtrackerusers.service.UsersService;
+import com.ddavydov.photoappusers.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
