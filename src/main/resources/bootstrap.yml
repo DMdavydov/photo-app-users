@@ -12,6 +12,10 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/photo_app?serverTimezone=UTC
+    username: robik
+    password: kibor
   cloud:
     config:
       uri: http://localhost:8012
@@ -21,6 +25,9 @@ spring:
     port: 5672
     username: guest
     password: guest
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 eureka:
   client:
