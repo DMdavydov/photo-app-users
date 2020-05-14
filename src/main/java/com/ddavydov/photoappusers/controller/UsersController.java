@@ -3,6 +3,7 @@ package com.ddavydov.photoappusers.controller;
 import com.ddavydov.photoappusers.dto.UserDto;
 import com.ddavydov.photoappusers.model.CreateUserRequest;
 import com.ddavydov.photoappusers.model.CreateUserResponse;
+import com.ddavydov.photoappusers.model.UserResponse;
 import com.ddavydov.photoappusers.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,5 +47,15 @@ public class UsersController {
         CreateUserResponse response = modelMapper.map(createUser, CreateUserResponse.class);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @PostMapping(value = "/{userId}",
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    public ResponseEntity<UserResponse> getUser(@PathVariable String userId) {
+
+        UserDto userDto = usersService.getUserByUserId(userId);
+        UserResponse returnValue = new ModelMapper().map(userDto, UserResponse.class);
+
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 }
