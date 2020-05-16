@@ -1,3 +1,5 @@
+
+
 token:
   expiration: 864000 #10 days
   secret: hrewarhewatjawete5345jdashrak3
@@ -15,3 +17,7 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 
 # Increase the Hystrix timeout to 60s (per service)
 hystrix.command.bug-tracker-users.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+logging:
+  level:
+    com.ddavydov.photoappusers.client.AlbumsClient.java: DEBUG
